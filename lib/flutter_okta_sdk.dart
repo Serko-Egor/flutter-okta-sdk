@@ -15,7 +15,7 @@ class OktaSDK {
     this.isInitialized = true;
   }
 
-  Future<void> signIn() async {
+  Future<Map<String, String?>> signIn() async {
     if (this.isInitialized == false) {
       throw Exception("Cannot sign in before initializing Okta SDK");
     }

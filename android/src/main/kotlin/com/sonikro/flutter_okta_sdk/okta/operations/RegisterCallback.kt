@@ -32,6 +32,7 @@ fun registerCallback(activity: Activity) {
                     result[Constants.ACCESS_TOKEN_KEY] = tokens.accessToken
 
                     PendingOperation.success(result)
+                    OktaClient.getWebClient().cancel()
                 } catch (e: AuthorizationException) {
                     result[Constants.ERROR_CODE_KEY] = Errors.SIGN_IN_FAILED.errorCode
                     result[Constants.ERROR_MSG_KEY] = Errors.SIGN_IN_FAILED.errorMessage

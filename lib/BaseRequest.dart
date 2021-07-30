@@ -21,14 +21,14 @@ class BaseRequest {
   String issuer;
 
   BaseRequest(
-      {this.clientId,
-      this.issuer,
-      this.discoveryUrl,
-      this.endSessionRedirectUri,
-      this.redirectUrl,
-      this.scopes,
-      this.userAgentTemplate,
-      this.requireHardwareBackedKeyStore});
+      {required this.clientId,
+        required this.issuer,
+        required this.discoveryUrl,
+        required this.endSessionRedirectUri,
+        required this.redirectUrl,
+        required this.scopes,
+        required this.userAgentTemplate,
+      this.requireHardwareBackedKeyStore = true});
 }
 
 Map<String, Object> convertBaseRequestToMap(BaseRequest baseRequest) {

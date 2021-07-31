@@ -14,7 +14,7 @@ class BaseRequest {
   /// The request scopes.
   List<String> scopes;
 
-  String userAgentTemplate;
+  String? userAgentTemplate;
 
   bool requireHardwareBackedKeyStore;
 
@@ -27,7 +27,7 @@ class BaseRequest {
         required this.endSessionRedirectUri,
         required this.redirectUrl,
         required this.scopes,
-        required this.userAgentTemplate,
+        this.userAgentTemplate,
       this.requireHardwareBackedKeyStore = true});
 }
 
